@@ -6,7 +6,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
-import com.maxela.android.R
 import com.maxela.android.databinding.FragmentWeatherBinding
 import dagger.hilt.android.AndroidEntryPoint
 import timber.log.Timber
