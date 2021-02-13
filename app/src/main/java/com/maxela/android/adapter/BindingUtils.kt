@@ -38,7 +38,7 @@ fun TextView.setDateTime(dateTime: Int?) {
     dateTime?.let {
         val longDate = dateTime.toLong() * 1000
         val date = Date(longDate)
-        val format = SimpleDateFormat("EEE, dd MMMM yyyy HH:mm")
+        val format = SimpleDateFormat("EEE, dd MMMM yyyy HH:mm",Locale.getDefault())
         text = format.format(date)
     }
 }
@@ -49,7 +49,7 @@ fun TextView.setWeekday(dateTime: Int?) {
     dateTime?.let {
         val longDate = dateTime.toLong() * 1000
         val date = Date(longDate)
-        val format = SimpleDateFormat("EEEE")
+        val format = SimpleDateFormat("EEEE",Locale.getDefault())
         text = format.format(date)
     }
 }
@@ -60,7 +60,7 @@ fun TextView.setDate(date: Int?) {
     date?.let {
         val longDate = date.toLong() * 1000
         val data = Date(longDate)
-        val format = SimpleDateFormat("dd MMMM yyyy HH:mm")
+        val format = SimpleDateFormat("dd MMMM yyyy HH:mm",Locale.getDefault())
         text = format.format(data)
     }
 }
@@ -71,7 +71,7 @@ fun TextView.setTime(time: Int?) {
     time?.let {
         val longDate = time.toLong() * 1000
         val date = Date(longDate)
-        val format = SimpleDateFormat("HH:mm")
+        val format = SimpleDateFormat("HH:mm", Locale.getDefault())
         text = format.format(date)
     }
 }
