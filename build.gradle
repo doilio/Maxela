@@ -1,6 +1,7 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 buildscript {
     ext {
+        glide_version = "4.11.0"
         hilt_version = "2.28-alpha"
         hilt_ext_version = "1.0.0-alpha02"
         interceptor_version = "4.9.0"

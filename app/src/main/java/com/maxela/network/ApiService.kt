@@ -15,7 +15,7 @@ interface ApiService {
     suspend fun getWeatherData(
         @Query(ID) id: String,
         @Query(APPID) apiKey: String,
-        @Query(LANG) language: String = "",
-        @Query(UNITS) units: String = ""
+        @Query(LANG) language: String = "pt",
+        @Query(UNITS) units: String = "metric"
     ): WeatherResponse
 }
