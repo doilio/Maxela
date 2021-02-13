@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="oops_nerror_loading_data">Ups! <br /> Ocorreu um erro ao carregar os dados!</string>
+    <string name="reload">Recarregar</string>
+    <string name="weather_icon">Ícone de temperatura</string>
+    <string name="temperature">Temperatura:</string>
+    <string name="humidity">Humidade:</string>
+    <string name="pressure">Pressão:</string>
+    <string name="sunrise">Nascer do sol:</string>
+    <string name="sunset">Pôr do sol:</string>
+    <string name="wind">Vento:</string>
+</resources>

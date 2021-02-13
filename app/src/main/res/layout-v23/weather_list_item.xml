@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="weatherResult"
+            type="com.maxela.android.model.WeatherResult" />
+
+        <variable
+            name="clickListener"
+            type="com.maxela.android.adapter.WeatherClickListener" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:onClick="@{()-> clickListener.onClick(weatherResult)}">
+
+        <ImageView
+            android:id="@+id/weather_icon"
+            weatherIcon="@{weatherResult.weather[0].imageUrl}"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:contentDescription="@string/weather_icon"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/cloudy" />
+
+        <TextView
+            android:id="@+id/text_city_country"
+            cityAndCountry="@{weatherResult}"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@+id/text_weather_main"
+            app:layout_constraintStart_toEndOf="@+id/weather_icon"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="packed"
+            tools:text="Maputo, MZ" />
+
+        <TextView
+            android:id="@+id/text_weather_main"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-condensed"
+            android:text="@{weatherResult.weather[0].description}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/weather_icon"
+            app:layout_constraintTop_toBottomOf="@+id/text_city_country"
+            tools:text="Clouds" />
+
+        <TextView
+            android:id="@+id/text_max_temp"
+            temperature="@{weatherResult.main.temp_max}"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="32dp"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@+id/text_min_temp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="packed"
+            tools:text="28°" />
+
+        <TextView
+            android:id="@+id/text_min_temp"
+            temperature="@{weatherResult.main.temp_min}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-condensed"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/text_max_temp"
+            app:layout_constraintTop_toBottomOf="@+id/text_max_temp"
+            tools:text="22°" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
