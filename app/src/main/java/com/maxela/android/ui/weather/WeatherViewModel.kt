@@ -19,14 +19,23 @@ class WeatherViewModel @ViewModelInject constructor(
     private val viewModelJob = Job()
     private val uiScope = CoroutineScope(Dispatchers.Main + viewModelJob)
 
+    // In-memory caching
+    private var currentWeatherData: MutableLiveData<List<WeatherResult>>? = null
+
     fun getWeatherResults(): LiveData<List<WeatherResult>> {
         val weatherData = MutableLiveData<List<WeatherResult>>()
+
+        val lastResult = currentWeatherData
+        if (lastResult != null) {
+            return lastResult
+        }
 
         uiScope.launch {
             weatherData.value = when (val result = repository.getWeatherResult()) {
                 is Result.Success -> result.data.list
                 is Result.Error -> null
             }
+            currentWeatherData = weatherData
         }
         return weatherData
     }

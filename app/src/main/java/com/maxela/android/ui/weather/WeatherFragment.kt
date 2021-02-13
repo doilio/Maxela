@@ -5,14 +5,14 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.LinearLayout
+import android.widget.Toast
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.maxela.android.adapter.WeatherAdapter
+import com.maxela.android.adapter.WeatherClickListener
 import com.maxela.android.databinding.FragmentWeatherBinding
 import dagger.hilt.android.AndroidEntryPoint
-import timber.log.Timber
 
 @AndroidEntryPoint
 class WeatherFragment : Fragment() {
@@ -40,8 +40,16 @@ class WeatherFragment : Fragment() {
     }
 
     private fun initComponents() {
-        adapter = WeatherAdapter()
+        // Init adapter
+        adapter = WeatherAdapter(
+            WeatherClickListener {
+                val action =
+                    WeatherFragmentDirections.actionWeatherFragmentToWeatherDetailsFragment(it)
+                findNavController().navigate(action)
+            }
+        )
 
+        // Setup recyclerview
         binding.recyclerWeather.hasFixedSize()
         val layoutManager = LinearLayoutManager(
             requireContext(),

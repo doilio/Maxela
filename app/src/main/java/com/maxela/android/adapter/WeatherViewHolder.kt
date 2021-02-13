@@ -9,8 +9,9 @@ import com.maxela.android.model.WeatherResult
 class WeatherViewHolder(private val binding: WeatherListItemBinding) :
     RecyclerView.ViewHolder(binding.root) {
 
-    fun bind(item: WeatherResult?) {
+    fun bind(item: WeatherResult?, clickListener: WeatherClickListener) {
         binding.weatherResult = item
+        binding.clickListener = clickListener
         binding.executePendingBindings()
     }
 

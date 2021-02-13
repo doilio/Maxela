@@ -18,5 +18,9 @@
         android:id="@+id/weatherDetailsFragment"
         android:name="com.maxela.android.ui.weatherDetails.WeatherDetailsFragment"
         android:label="fragment_weather_details"
-        tools:layout="@layout/fragment_weather_details" />
+        tools:layout="@layout/fragment_weather_details" >
+        <argument
+            android:name="weatherResult"
+            app:argType="com.maxela.android.model.WeatherResult" />
+    </fragment>
 </navigation>

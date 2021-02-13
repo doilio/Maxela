@@ -8,13 +8,18 @@
         <variable
             name="weatherResult"
             type="com.maxela.android.model.WeatherResult" />
+
+        <variable
+            name="clickListener"
+            type="com.maxela.android.adapter.WeatherClickListener" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="80dp"
         android:clickable="true"
-        android:focusable="true">
+        android:focusable="true"
+        android:onClick="@{()-> clickListener.onClick(weatherResult)}">
 
         <ImageView
             android:id="@+id/weather_icon"

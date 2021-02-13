@@ -8,15 +8,19 @@
         <variable
             name="weatherResult"
             type="com.maxela.android.model.WeatherResult" />
+
+        <variable
+            name="clickListener"
+            type="com.maxela.android.adapter.WeatherClickListener" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="80dp"
-        android:foreground="?android:attr/selectableItemBackground"
         android:clickable="true"
         android:focusable="true"
-        tools:targetApi="m">
+        android:foreground="?android:attr/selectableItemBackground"
+        android:onClick="@{()-> clickListener.onClick(weatherResult)}">
 
         <ImageView
             android:id="@+id/weather_icon"
@@ -56,11 +60,11 @@
 
         <TextView
             android:id="@+id/text_max_temp"
+            temperature="@{weatherResult.main.temp_max}"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginEnd="32dp"
             android:fontFamily="sans-serif-condensed-medium"
-            temperature="@{weatherResult.main.temp_max}"
             android:textAppearance="@style/TextAppearance.AppCompat.Body1"
             android:textSize="20sp"
             app:layout_constraintBottom_toTopOf="@+id/text_min_temp"
@@ -71,10 +75,10 @@
 
         <TextView
             android:id="@+id/text_min_temp"
+            temperature="@{weatherResult.main.temp_min}"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="sans-serif-condensed"
-            temperature="@{weatherResult.main.temp_min}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="@+id/text_max_temp"
             app:layout_constraintTop_toBottomOf="@+id/text_max_temp"
