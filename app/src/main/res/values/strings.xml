@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Maxela</string>
+    <string name="app_name" translatable="false">Maxela</string>
     <string name="oops_nerror_loading_data">Oops!<br/>There was an error loading the data!</string>
     <string name="reload">Reload</string>
     <string name="weather_icon">Weather Icon</string>

@@ -21,6 +21,7 @@
         android:background="@color/primary"
         android:clickable="true"
         android:focusable="true"
+        android:foreground="?android:attr/selectableItemBackground"
         android:onClick="@{()->clickListener.onClick(weatherResult)}">
 
 

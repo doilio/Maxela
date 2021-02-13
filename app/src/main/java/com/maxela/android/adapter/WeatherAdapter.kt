@@ -4,16 +4,40 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import com.maxela.android.model.Weather
 import com.maxela.android.model.WeatherResult
+import com.maxela.android.utils.HEADER_VIEW_TYPE
+import com.maxela.android.utils.WEATHER_VIEW_TYPE
+import java.lang.ClassCastException
 
 class WeatherAdapter(private val clickListener: WeatherClickListener) :
     ListAdapter<WeatherResult, RecyclerView.ViewHolder>(WeatherDiffUtilCallback()) {
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
-        return WeatherViewHolder.from(parent)
+        return when (viewType) {
+            HEADER_VIEW_TYPE -> HeaderViewHolder.from(parent)
+            WEATHER_VIEW_TYPE -> WeatherViewHolder.from(parent)
+            else -> throw ClassCastException("Unknown ViewType: $viewType")
+        }
     }
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
-        (holder as WeatherViewHolder).bind(getItem(position), clickListener)
+        when (holder) {
+            is HeaderViewHolder -> {
+                holder.bind(getItem(position), clickListener)
+            }
+            is WeatherViewHolder -> {
+                holder.bind(getItem(position), clickListener)
+            }
+        }
+
+    }
+
+    override fun getItemViewType(position: Int): Int {
+        return when (getItem(position).id) {
+            1040652 -> HEADER_VIEW_TYPE
+            else -> WEATHER_VIEW_TYPE
+        }
     }
 }
 

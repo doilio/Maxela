@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="oops_nerror_loading_data">Ups! <br /> Ocorreu um erro ao carregar os dados!</string>
+    <string name="reload">Recarregar</string>
+    <string name="weather_icon">Ícone de temperatura</string>
+</resources>
