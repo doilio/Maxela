@@ -13,9 +13,7 @@ Base URL = `"https://api.openweathermap.org/data/2.5/"`
 2. Create a file on the Utils package with: 
 `const val API_KEY = "PLACE YOUR API KEY HERE"`
 
-![1](https://user-images.githubusercontent.com/38020305/107864035-6593cc00-6e61-11eb-8719-62dc622dcdc7.png)
-![2](https://user-images.githubusercontent.com/38020305/107864038-69bfe980-6e61-11eb-8b4e-c77f12d00ffa.png)
-![3](https://user-images.githubusercontent.com/38020305/107864041-6c224380-6e61-11eb-8868-d31b382648e0.png)
+![device-2021-02-14-060024-horz1-vert](https://user-images.githubusercontent.com/38020305/107868666-d6051200-6e8e-11eb-91a2-68af68094f3e.jpg)
 
 
 
@@ -26,8 +24,10 @@ Base URL = `"https://api.openweathermap.org/data/2.5/"`
   * [Databinding](https://developer.android.com/jetpack/androidx/releases/databinding)
   * [LiveData](https://developer.android.com/topic/libraries/architecture/livedata)
   * [Navigation](https://developer.android.com/jetpack/androidx/releases/navigation)
+  * [Preference](https://developer.android.com/jetpack/androidx/releases/preference)
   * [ViewModel](https://developer.android.com/topic/libraries/architecture/viewmodel)
 * [Glide](https://github.com/bumptech/glide) - A fast and efficient open source media management and image loading framework for Android.
+* [Google Play Core](https://developer.android.com/guide/playcore) - Offers a runtime interface with the Google Play Store.
 * [GSON](https://github.com/google/gson) - Java library that can be used to convert Java Objects into their JSON representation.
 * [Hilt](https://developer.android.com/training/dependency-injection/hilt-android) - Library that provides a standard way to incorporate Dagger dependency injection into an Android application.
 * [Kotlin Coroutines](https://developer.android.com/kotlin/coroutines) - Concurrency design pattern used on Android to simplify code that executes asynchronously.
