@@ -13,7 +13,8 @@ Base URL = `"https://api.openweathermap.org/data/2.5/"`
 2. Create a file on the Utils package with: 
 `const val API_KEY = "PLACE YOUR API KEY HERE"`
 
-![device-2021-02-14-060024-horz1-vert](https://user-images.githubusercontent.com/38020305/107868666-d6051200-6e8e-11eb-91a2-68af68094f3e.jpg)
+![11-vert](https://user-images.githubusercontent.com/38020305/107880448-80a91f00-6ee7-11eb-8840-d218376cafbf.jpg)
+
 
 
 
