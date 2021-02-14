@@ -1,5 +1,5 @@
 # Maxela🌦
-🌦Maxela(Weather in my local dialect - Changana) Is an app that displays weather data in 10 European cities and in my local city Maputo
+🌦Maxela(Means "Weather" in my local dialect - Changana) Is an app that displays weather data of 10 European cities and weather from my local city Maputo.
 
 
 The App Makes a request to OpenWeatherMap's [API](https://openweathermap.org/current) to get:
