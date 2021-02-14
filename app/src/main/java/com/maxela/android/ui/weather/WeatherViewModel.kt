@@ -37,8 +37,10 @@ class WeatherViewModel @ViewModelInject constructor(
             return lastResult
         }
 
+        currentLanguage = language
+        currentUnit = unit
         uiScope.launch {
-            weatherData.value = when (val result = repository.getWeatherResult(language,unit)) {
+            weatherData.value = when (val result = repository.getWeatherResult(language, unit)) {
                 is Result.Success -> result.data.list
                 is Result.Error -> null
             }
