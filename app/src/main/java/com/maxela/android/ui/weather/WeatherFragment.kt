@@ -1,16 +1,18 @@
 package com.maxela.android.ui.weather
 
+import android.content.Intent
 import android.os.Bundle
+import android.view.*
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.ui.NavigationUI
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.maxela.android.R
 import com.maxela.android.adapter.WeatherAdapter
 import com.maxela.android.adapter.WeatherClickListener
 import com.maxela.android.databinding.FragmentWeatherBinding
+import com.maxela.android.ui.settings.SettingsActivity
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -38,7 +40,27 @@ class WeatherFragment : Fragment() {
         binding.buttonReload.setOnClickListener { fetchWeatherData() }
     }
 
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        super.onCreateOptionsMenu(menu, inflater)
+        inflater.inflate(R.menu.weather_menu, menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            R.id.settingsActivity -> openSettings()
+        }
+        return NavigationUI.onNavDestinationSelected(
+            item,
+            findNavController()
+        ) || super.onOptionsItemSelected(item)
+    }
+
+    private fun openSettings() {
+        startActivity(Intent(activity, SettingsActivity::class.java))
+    }
+
     private fun initComponents() {
+        setHasOptionsMenu(true)
         // Init adapter
         adapter = WeatherAdapter(
             WeatherClickListener {

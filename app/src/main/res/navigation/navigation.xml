@@ -22,4 +22,8 @@
             android:name="weatherResult"
             app:argType="com.maxela.android.model.WeatherResult" />
     </fragment>
+    <fragment
+        android:id="@+id/aboutFragment"
+        android:name="com.maxela.android.ui.about.AboutFragment"
+        android:label="@string/about" />
 </navigation>

@@ -2,7 +2,7 @@ package com.maxela.android.di
 
 import com.maxela.android.BuildConfig
 import com.maxela.android.utils.BASE_URL
-import com.maxela.network.ApiService
+import com.maxela.android.network.ApiService
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
