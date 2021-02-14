@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name" translatable="false">Maxela</string>
-    <string name="oops_nerror_loading_data">Oops!<br/>There was an error loading the data!</string>
+    <string name="oops_nerror_loading_data">Oops!<br />There was an error loading the data!</string>
     <string name="reload">Reload</string>
     <string name="weather_icon">Weather Icon</string>
     <string name="temperature">Temperature:</string>
@@ -9,4 +9,68 @@
     <string name="sunrise">Sunrise:</string>
     <string name="sunset">Sunset:</string>
     <string name="wind">Wind:</string>
+
+    <!--About Page-->
+    <string name="playstore_link" translatable="false">https://play.google.com/store/apps/details?id=com.maxela.android</string>
+    <string name="about_app_link" translatable="false">com.maxela.android</string>
+    <string name="about_descricao">Maxela is an app that displays weather data in 10 European cities and in my local city Maputo. \n\nMaxela translates to Weather, it\'s a word used on a Mozambican dialect called "Changana" \n\nThis product makes use of the OpenWeatherMap\'s API</string>
+    <string name="dev_email" translatable="false">doiliomatsinhe@gmail.com</string>
+    <string name="dev_facebook_page" translatable="false">doilio.matsinhe</string>
+    <string name="dev_github_page" translatable="false">doilio</string>
+    <string name="dev_instagram_page" translatable="false">doiliomatsinhe</string>
+    <string name="facebook" translatable="false">Facebook</string>
+    <string name="instagram" translatable="false">Instagram</string>
+    <string name="github" translatable="false">GitHub</string>
+    <string name="envie_email">Send an e-mail</string>
+    <string name="redes_sociais">Social networks</string>
+    <string name="about_fale_conosco">Contact-me</string>
+    <string name="playstore_page">Rate on Play Store</string>
+    <string name="about">About</string>
+    <string name="settings">Settings</string>
+    <!--About Page-->
+    <string-array name="language_entries">
+        <item>@string/portuguese</item>
+        <item>@string/english</item>
+    </string-array>
+
+    <string-array name="language_values">
+        <item>pt</item>
+        <item>en</item>
+    </string-array>
+
+    <string-array name="theme_entries">
+        <item>@string/light</item>
+        <item>@string/dark</item>
+    </string-array>
+
+    <string-array name="theme_values">
+        <item>1</item>
+        <item>2</item>
+    </string-array>
+
+    <string-array name="units_entries">
+        <item>@string/metric</item>
+        <item>@string/imperial</item>
+    </string-array>
+
+    <string-array name="units_values">
+        <item>metric</item>
+        <item>imperial</item>
+    </string-array>
+
+    <string name="metric">Metric</string>
+    <string name="imperial">Imperial</string>
+    <string name="light">Light</string>
+    <string name="dark">Dark</string>
+    <string name="english">English</string>
+    <string name="portuguese">Portuguese</string>
+    <string name="contents">Contents</string>
+    <string name="language">Language</string>
+    <string name="display">Display</string>
+    <string name="theme">Theme</string>
+    <string name="unit">Unit</string>
+    <string name="view_location">View on map</string>
+    <string name="share_temperature">Share</string>
+    <string name="share_text">Hey! the temperature for %s,%s today is %s°. <br/>Check out more weather details on: %s</string>
+
 </resources>

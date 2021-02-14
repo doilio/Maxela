@@ -9,4 +9,25 @@
     <string name="sunrise">Nascer do sol:</string>
     <string name="sunset">Pôr do sol:</string>
     <string name="wind">Vento:</string>
+    <string name="playstore_page">Avaliar na Play Store</string>
+    <string name="about_fale_conosco">Contate-me</string>
+    <string name="redes_sociais">Redes sociais</string>
+    <string name="envie_email">Enviar um email</string>
+    <string name="about_descricao">Maxela é um aplicativo que exibe dados meteorológicos em 10 cidades europeias e na minha cidade local Maputo.  \\n\\nMaxela significa temperatura, é uma palavra usada em um dialeto moçambicano chamado Changana  \\n\\nEste produto usa a API do OpenWeatherMap.</string>
+    <string name="about">Sobre</string>
+    <string name="settings">Configurações</string>
+    <string name="english">English</string>
+    <string name="portuguese">Português</string>
+    <string name="light">Claro</string>
+    <string name="dark">Escuro</string>
+    <string name="contents">Conteúdos</string>
+    <string name="language">Língua</string>
+    <string name="display">Tela</string>
+    <string name="theme">Tema</string>
+    <string name="unit">Unidade</string>
+    <string name="metric">Métrico</string>
+    <string name="imperial">Imperial</string>
+    <string name="view_location">Ver no mapa</string>
+    <string name="share_temperature">Partilhar</string>
+    <string name="share_text">Oi! a temperatura para %s,%s hoje é de %s°. <br/>Confira mais detalhes do clima em: %s</string>
 </resources>
