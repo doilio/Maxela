@@ -1,5 +1,6 @@
 package com.maxela.android.ui.about
 
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.view.Gravity
 import android.view.LayoutInflater
@@ -9,11 +10,20 @@ import androidx.fragment.app.Fragment
 import com.google.android.play.core.review.ReviewManager
 import com.google.android.play.core.review.ReviewManagerFactory
 import com.maxela.android.R
+import com.maxela.android.utils.NIGHT_MODE_KEY
+import com.maxela.android.utils.NIGHT_MODE_OFF
+import com.maxela.android.utils.NIGHT_MODE_ON
+import dagger.hilt.android.AndroidEntryPoint
 import mehdi.sakout.aboutpage.AboutPage
 import mehdi.sakout.aboutpage.Element
 import java.util.*
+import javax.inject.Inject
 
+@AndroidEntryPoint
 class AboutFragment : Fragment() {
+
+    @Inject
+    lateinit var sharedPreferences: SharedPreferences
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -22,8 +32,11 @@ class AboutFragment : Fragment() {
     ): View {
         launchInAppReviewFlow()
 
+        val enable = sharedPreferences.getString(NIGHT_MODE_KEY, NIGHT_MODE_OFF) == NIGHT_MODE_ON
+
         return AboutPage(context)
             .isRTL(false)
+            .enableDarkMode(enable)
             .setDescription(getString(R.string.about_descricao))
             .addEmail(getString(R.string.dev_email), getString(R.string.envie_email))
             .addPlayStore(getString(R.string.about_app_link), getString(R.string.playstore_page))
@@ -60,7 +73,7 @@ class AboutFragment : Fragment() {
                 .get(Calendar.YEAR)
         )
         copyright.title = copyrightString
-        copyright.iconDrawable = R.mipmap.ic_launcher
+        copyright.iconDrawable = R.mipmap.ic_launcher_foreground
         copyright.gravity = Gravity.CENTER
         return copyright
 
